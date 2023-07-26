@@ -1,40 +1,11 @@
 <script>
     import Page from '$lib/Page.svelte';
-    import { pages } from '$lib/index.js';
+    import { pages, images, stats } from '$lib/index.js';
 </script>
 
 <Page pageId="home">
     <main class="isolate mb-20">
         <div class="relative isolate -z-10">
-            <svg
-                class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-                aria-hidden="true"
-            >
-                <defs>
-                    <pattern
-                        id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                        width="200"
-                        height="200"
-                        x="50%"
-                        y="-1"
-                        patternUnits="userSpaceOnUse"
-                    >
-                        <path d="M.5 200V.5H200" fill="none" />
-                    </pattern>
-                </defs>
-                <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-                    <path
-                        d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                        stroke-width="0"
-                    />
-                </svg>
-                <rect
-                    width="100%"
-                    height="100%"
-                    stroke-width="0"
-                    fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-                />
-            </svg>
             <div
                 class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
                 aria-hidden="true"
@@ -51,18 +22,26 @@
                     >
                         <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                                Your plumbing and heating experts
+                                {pages.home.heading}
                             </h1>
                             <p
                                 class="relative mt-8 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none"
                             >
-                                Specializing in heating, plumbing, HVAC, and gas maintenance needs.
-                                Delivering value with integrity and proven high-quality service.
+                                {pages.home.subheading}
                             </p>
                             <div class="mt-8 flex items-center gap-x-6">
-                                <a href={pages.contact.path} class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Contact us 24/7</a>
-                                <a href={pages.services.path} class="text-sm font-semibold leading-6 text-gray-900">Learn about our services &nbsp;<span aria-hidden="true">→</span></a>
-                              </div>
+                                <a
+                                    href={pages.contact.path}
+                                    class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    >Contact us 24/7</a
+                                >
+                                <a
+                                    href={pages.services.path}
+                                    class="text-sm font-semibold leading-6 text-gray-900"
+                                    >Learn about our services &nbsp;<span aria-hidden="true">→</span
+                                    ></a
+                                >
+                            </div>
                         </div>
                         <div
                             class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0"
@@ -72,8 +51,8 @@
                             >
                                 <div class="relative">
                                     <img
-                                        src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                                        alt=""
+                                        src={images.alex.src}
+                                        alt={images.alex.alt}
                                         class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                     />
                                     <div
@@ -84,8 +63,8 @@
                             <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                                 <div class="relative">
                                     <img
-                                        src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                                        alt=""
+                                        src={images.vans.src}
+                                        alt={images.vans.alt}
                                         class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                     />
                                     <div
@@ -94,8 +73,8 @@
                                 </div>
                                 <div class="relative">
                                     <img
-                                        src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
-                                        alt=""
+                                        src={images.vans.src}
+                                        alt={images.vans.alt}
                                         class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                     />
                                     <div
@@ -106,8 +85,8 @@
                             <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                                 <div class="relative">
                                     <img
-                                        src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
-                                        alt=""
+                                        src={images.alex.src}
+                                        alt={images.alex.alt}
                                         class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                     />
                                     <div
@@ -116,8 +95,8 @@
                                 </div>
                                 <div class="relative">
                                     <img
-                                        src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                                        alt=""
+                                        src={images.boiler.src}
+                                        alt={images.boiler.alt}
                                         class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                     />
                                     <div
@@ -141,8 +120,8 @@
                         class="lg:w-full lg:max-w-2xl lg:flex-auto mt-4 max-w-xl text-base leading-7 text-gray-700"
                     >
                         <p>
-                            Established in 2014 by a highly experience and educated team, based in
-                            the Lower Mainland, MegaHydronics has always striven to earn the high
+                            Established in 2014 by a highly experienced and educated team, based in
+                            the BC Lower Mainland, MegaHydronics has always striven to earn the high
                             regard of both clients and industry professionals alike for consistently
                             delivering high quality services ahead of schedule and on budget.
                         </p>
@@ -155,36 +134,22 @@
                             plumbing, HVAC, gas and residential maintenance needs.
                         </p>
                         <p class="mt-8">
-                            We are licensed and bonded BSCA gas and boiler contractor with
+                            We are a licensed and bonded BSCA gas and boiler contractor with
                             commercial insurance. We are proud of our clear WCB record.
                         </p>
                     </div>
                     <div class="lg:flex lg:flex-auto lg:justify-center">
                         <dl class="w-64 space-y-8 xl:w-80">
-                            <div class="flex flex-col-reverse gap-y-4">
-                                <dt class="text-base leading-7 text-gray-600">
-                                    Of field expertise
-                                </dt>
-                                <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-                                    9 years
-                                </dd>
-                            </div>
-                            <div class="flex flex-col-reverse gap-y-4">
-                                <dt class="text-base leading-7 text-gray-600">
-                                    Skilled professionals
-                                </dt>
-                                <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-                                    12
-                                </dd>
-                            </div>
-                            <div class="flex flex-col-reverse gap-y-4">
-                                <dt class="text-base leading-7 text-gray-600">
-                                    Clients served annually
-                                </dt>
-                                <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-                                    800
-                                </dd>
-                            </div>
+                            {#each Object.values(stats) as stat}
+                                <div class="flex flex-col-reverse gap-y-2">
+                                    <dt class="text-base leading-7 text-gray-600">
+                                        {stat.description}
+                                    </dt>
+                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900">
+                                        {stat.value}
+                                    </dd>
+                                </div>
+                            {/each}
                         </dl>
                     </div>
                 </div>

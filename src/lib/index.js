@@ -9,7 +9,8 @@ export const pages = {
         id: 'home',
         title: 'Home',
         path: '/',
-        heading: '',
+        heading: 'Your plumbing experts',
+        subheading: 'Specializing in heating, plumbing, HVAC, and gas maintenance needs. Delivering value with integrity and proven high-quality service.',
     },
     services: {
         id: 'services',
@@ -21,7 +22,7 @@ export const pages = {
         id: 'gallery',
         title: 'Gallery',
         path: '/gallery',
-        heading: 'Showcase of our prior work',
+        heading: 'Showcasing our past projects',
     },
     contact: {
         id: 'contact',
@@ -150,6 +151,21 @@ export const images = {
         src: 'images/16.jpg',
         alt: 'Gallery',
     },
+    alex: {
+        id: 'alex',
+        src: 'images/alex.jpg',
+        alt: 'Alex receiving his Red Seal Certification under MegaHydronics',
+    },
+    vans: {
+        id: 'vans',
+        src: 'images/vans.jpg',
+        alt: 'Our fleet of vans',
+    },
+    boiler: {
+        id: 'boiler',
+        src: 'images/boiler.jpg',
+        alt: 'Boiler room retrofit',
+    },
 }
 
 export const icons = {
@@ -238,5 +254,23 @@ export const certificates = {
         id: 'tsbc',
         title: 'Technical Safety BC',
         src: 'certificates/tsbc.png',
+    },
+}
+
+export const stats = {
+    experience: {
+        id: 'experience',
+        value: '9+ years',
+        description: 'Of field expertise',
+    },
+    journeymen: {
+        id: 'journeymen',
+        value: '12',
+        description: 'Skilled journeymen',
+    },
+    clients: {
+        id: 'clients',
+        value: '800+',
+        description: 'Clients served annually',
     },
 }
