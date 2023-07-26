@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Inter";
-    src: url("./Inter.ttf");
+    font-family: 'Inter';
+    src: url('%sveltekit.assets%/Inter.ttf');
 }

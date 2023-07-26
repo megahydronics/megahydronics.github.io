@@ -5,7 +5,7 @@
 </script>
 
 <Head />
-<div class="min-h-screen flex flex-col">
+<div class='min-h-screen flex flex-col'>
     <Navbar />
     <slot />
     <Footer />
