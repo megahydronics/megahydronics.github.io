@@ -4,5 +4,5 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('%sveltekit.assets%/Inter.ttf');
+    src: url('/Inter.ttf');
 }
