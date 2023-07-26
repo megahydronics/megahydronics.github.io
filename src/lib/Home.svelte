@@ -4,6 +4,7 @@
 
 <main class="isolate mb-20">
     <div class="relative isolate -z-10">
+        
         <div
             class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
             aria-hidden="true"
@@ -36,7 +37,7 @@
                             <button
                                 on:click={currentPageIdSetter(pages.services.id)}
                                 class="text-sm font-semibold leading-6 text-gray-900"
-                                >Learn about our services &nbsp;<span aria-hidden="true">→</span
+                                >About our services &nbsp;<span aria-hidden="true">→</span
                                 ></button
                             >
                         </div>
@@ -111,12 +112,13 @@
 
     <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
-            <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
+            <div class="flex flex-col-reverse gap-x-8 gap-y-20 lg:flex-row">
                 <div
-                    class="lg:w-full lg:max-w-2xl lg:flex-auto mt-4 max-w-xl text-base leading-7 text-gray-700"
+                    class="lg:w-full lg:max-w-2xl lg:flex-auto max-w-xl text-base leading-7 text-gray-700"
                 >
-                    <p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Our mission</h2>
+
+                    <p class="mt-10">
                         Established in 2014 by a highly experienced and educated team, based in the
                         BC Lower Mainland, MegaHydronics has always striven to earn the high regard
                         of both clients and industry professionals alike for consistently delivering
@@ -135,7 +137,7 @@
                         insurance. We are proud of our clear WCB record.
                     </p>
                 </div>
-                <div class="lg:flex lg:flex-auto lg:justify-center">
+                <div class="mt-2 lg:flex lg:flex-auto lg:justify-center">
                     <dl class="w-64 space-y-8 xl:w-80">
                         {#each Object.values(stats) as stat}
                             <div class="flex flex-col gap-y-2">
