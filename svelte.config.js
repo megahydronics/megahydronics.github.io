@@ -1,17 +1,17 @@
 import adapter from '@sveltejs/adapter-static'
 import { vitePreprocess } from '@sveltejs/kit/vite'
 
-const dev = process.argv.includes('dev')
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html',
+			// fallback: 'index.html',
+			strict: true,
+			precompress: false,
+			pages: 'build',
+			assets: 'build',
+			trailingSlash: 'always',
 		}),
-		paths: {
-			base: dev ? '' : process.env.BASE_PATH,
-		}
 	},
 	preprocess: vitePreprocess()
 }

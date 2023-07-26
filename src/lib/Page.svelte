@@ -2,9 +2,8 @@
   import { pageInfos, contactInfos, siteInfo, socialInfos } from '$lib/index.js';
   export let pageId;
 
-  let pageInfo = pageInfos[pageId];
-  let pageTitle = pageInfo.id == 'home' ? siteInfo.title : `${pageInfo.title} - ${siteInfo.title}`;
-  let pageUrl = `${siteInfo.url}${pageInfo.path}`;
+  const pageInfo = pageInfos[pageId];
+  const pageUrl = `${siteInfo.url}${pageInfo.path}`;
   let menuOpen = false;
 
   function toggleMenu() {
@@ -18,12 +17,12 @@
     name="robots"
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   />
-  <title>{pageTitle}</title>
+  <title>{siteInfo.title}</title>
   <meta name="description" content={pageInfo.description} />
   <link rel="canonical" href={pageUrl} />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content={pageTitle} />
+  <meta property="og:title" content={siteInfo.title} />
   <meta property="og:url" content={pageUrl} />
   <meta property="og:description" content={pageInfo.description} />
   <meta property="og:site_name" content={siteInfo.title} />
@@ -153,7 +152,7 @@
       </div>
       <div class="mt-6 md:order-1 md:mt-0">
         <p class="text-center text-xs leading-5 text-gray-400">
-          &copy; 2023 MegaHydronics Inc. All rights reserved.
+          © 2023 MegaHydronics Inc. All rights reserved.
         </p>
       </div>
     </div>
