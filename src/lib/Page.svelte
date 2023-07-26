@@ -40,10 +40,10 @@
             {#each Object.values(pages) as info}
               <a
                 href={info.path}
-                class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium {info.id ==
+                class="inline-flex items-center px-1 pt-1 text-sm font-medium {info.id ==
                 pageId
-                  ? 'border-indigo-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}"
+                  ? 'text-gray-900'
+                  : 'text-gray-400  hover:text-gray-500'}"
                 >{info.title}</a
               >
             {/each}
