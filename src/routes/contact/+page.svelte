@@ -1,17 +1,14 @@
 <script>
     import Page from '$lib/Page.svelte';
+    import { pages } from '$lib/index.js';
 </script>
 
 <Page pageId="contact">
     <div class="px-6 py-12 md:py-20 lg:px-8">
         <div class="mx-auto max-w-xl lg:max-w-5xl">
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Get in touch anytime</h2>
-            <div class="mt-12 lg:items-start flex flex-col gap-10 lg:flex-row">
-                <form
-                    action="#"
-                    method="POST"
-                    class="lg:flex-auto"
-                >
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">{pages.contact.heading}</h2>
+            <div class="mt-14 lg:items-start flex flex-col gap-10 lg:flex-row">
+                <form action="#" method="POST" class="lg:flex-auto">
                     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div>
                             <label

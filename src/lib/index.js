@@ -1,40 +1,37 @@
-export const siteInfo = {
+export const site = {
     title: 'MegaHydronics Inc.',
     url: 'https://megahydronics.com',
+    description: 'Top tier service to our residential, commercial, and industrial clients to address their heating, plumbing, HVAC, gas, and facility maintenance needs.',
 }
 
-export const pageInfos = {
+export const pages = {
     home: {
         id: 'home',
         title: 'Home',
         path: '/',
-        description: 'Top tier service to our residential, commercial, and industrial clients to address their heating, plumbing, HVAC, gas, and aacility maintenance needs.',
-        keywords: []
+        heading: '',
     },
     services: {
         id: 'services',
         title: 'Services',
         path: '/services',
-        description: '',
-        keywords: []
+        heading: 'What we specialize in',
     },
     gallery: {
         id: 'gallery',
         title: 'Gallery',
         path: '/gallery',
-        description: '',
-        keywords: []
+        heading: 'Showcase of our prior work',
     },
     contact: {
         id: 'contact',
         title: 'Contact',
         path: '/contact',
-        description: '',
-        keywords: []
+        heading: 'Get in touch anytime',
     },
 }
 
-export const contactInfos = {
+export const contacts = {
     phone: {
         id: 'phone',
         title: 'Telephone',
@@ -51,7 +48,7 @@ export const contactInfos = {
     }
 }
 
-export const socialInfos = {
+export const socials = {
     linkedin: {
         id: 'linkedin',
         title: 'LinkedIn',
@@ -72,7 +69,7 @@ export const socialInfos = {
     },
 }
 
-export const imageInfos = {
+export const images = {
     1: {
         id: '1',
         src: 'images/1.jpg',
@@ -155,10 +152,91 @@ export const imageInfos = {
     },
 }
 
-export const iconInfos = {
+export const icons = {
     close: {
         id: 'close',
         name: 'Close',
         svgPath: 'm12,10.798l-5.713,-5.714c-0.332,-0.331 -0.871,-0.331 -1.203,0c-0.331,0.332 -0.331,0.871 0,1.203l5.714,5.713l-5.714,5.713c-0.331,0.332 -0.331,0.871 0,1.203c0.332,0.331 0.871,0.331 1.203,-0l5.713,-5.714l5.713,5.714c0.332,0.331 0.871,0.331 1.203,-0c0.331,-0.332 0.331,-0.871 -0,-1.203l-5.714,-5.713l5.714,-5.713c0.331,-0.332 0.331,-0.871 -0,-1.203c-0.332,-0.331 -0.871,-0.331 -1.203,0l-5.713,5.714z',
     }
+}
+
+export const services = {
+    plumbing: {
+        id: 'plumbing',
+        title: 'Plumbing',
+        description: 'Our comprehensive plumbing services cater to a wide range of properties, including commercial and residential high and low rises, institutional, and industrial facilities. Our expertise includes installation, repair, and maintenance of various plumbing systems, pumps, circulators, drains, and high-end fixtures, as well as efficient drain cleaning solutions.',
+    },
+    heating: {
+        id: 'heating',
+        title: 'Heating',
+        description: 'Stay warm during winter with our expert heating services tailored for both residential and commercial properties. From hydronics heating systems to solar heating solutions, we offer installation, repair, and maintenance services, ensuring energy-efficient heating and domestic hot water systems.',
+    },
+    boiler: {
+        id: 'boiler',
+        title: 'Boiler',
+        description: 'Ensure the optimal performance of your gas fire equipment with our comprehensive services. We handle annual inspections and maintenance for various gas appliances, such as hot water boilers, low pressure steam boilers, and furnaces. Additionally, we offer combustion solution consultation and coordinate start-up inspection services with BC Safety Authority Safety Officers.',
+    },
+    classAGas: {
+        id: 'classAGas',
+        title: 'Class A Gas',
+        description: 'Secure your gas lines and pipes with our licensed Class A Gas services. We offer comprehensive maintenance, timely issue resolutions, and expert installations for industrial, commercial, and residential gas piping and appliances, ensuring longevity and peace of mind. Qualified technicians with full WCB coverage handle all work, including gas permits for installations and alterations.',
+    },
+    hvacAirConditioning: {
+        id: 'hvacAirConditioning',
+        title: 'HVAC & Air Conditioning',
+        description: 'Stay cool during the scorching summer months with our expert HVAC services. Our licensed team offers a full range of solutions, including air conditioner repair, installation, and maintenance of water heat pumps, kitchen equipment, and various units like RTUs, condensing units, and fan coils.',
+    },
+    backflowPrevention: {
+        id: 'backflowPrevention',
+        title: 'Backflow Prevention',
+        description: 'Safeguard the quality of your drinking water with our Back Flow Preventer Assembly Testing and Service Programs. Our fully licensed testers use advanced instruments to conduct required tests, preventing cross connections and contamination areas. All test reports are promptly submitted to the City\'s Engineering Department.',
+    },
+    buildingMaintenance: {
+        id: 'buildingMaintenance',
+        title: 'Building Maintenance',
+        description: 'Count on us to address building concerns promptly and professionally. Avoid costly emergencies and unexpected interruptions with our preventive maintenance programs, offering inspection and maintenance services for a wide range of equipment, including boilers, pumps, cooling towers, HVAC units, and more.',
+    },
+    vaccumService: {
+        id: 'vaccumService',
+        title: 'Vaccum Service',
+        description: 'Our low profile vacuum truck is designed for underground parkades and hard-to-reach areas. We efficiently remove excess water, sediment, and debris, ensuring optimal system performance. Our streamlined approach and technical expertise make us the preferred choice for Stratas, Commercial Businesses, and Municipalities seeking cost-effective vacuum truck services.',
+    },
+}
+
+export const certificates = {
+    nti: {
+        id: 'nti',
+        title: 'Navien Tankless Innovations',
+        src: 'certificates/nti.png',
+    },
+    energyStar: {
+        id: 'energyStar',
+        title: 'Energy Star',
+        src: 'certificates/energyStar.png',
+    },
+    asme: {
+        id: 'asme',
+        title: 'American Society of Mechanical Engineers',
+        src: 'certificates/asme.png',
+    },
+    bbb: {
+        id: 'bbb',
+        title: 'Better Business Bureau',
+        src: 'certificates/bbb.png',
+    },
+    redSeal: {
+        id: 'redSeal',
+        title: 'Red Seal Program',
+        src: 'certificates/redSeal.png',
+    },
+    teca: {
+        id: 'teca',
+        title: 'Thermal Environmental Comfort Association',
+        src: 'certificates/teca.png',
+    },
+    tsbc: {
+        id: 'tsbc',
+        title: 'Technical Safety BC',
+        src: 'certificates/tsbc.png',
+    },
 }
