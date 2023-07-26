@@ -28,7 +28,7 @@
   <meta property="og:site_name" content={siteInfo.title} />
 </svelte:head>
 
-<div class="min-h-screen flex flex-col scrollbar scrollbar-thumb-red-900 scrollbar-track-gray-100">
+<div class="min-h-screen flex flex-col">
   <nav class={menuOpen ? "shadow-md" : ""}>
     <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
       <div class="flex h-16 justify-between">

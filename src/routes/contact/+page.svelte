@@ -1,10 +1,5 @@
 <script>
     import Page from '$lib/Page.svelte';
-
-    let formHeight;
-    let formWidth;
-    let mapHeight;
-    $: mapHeight = Math.min(formWidth, formHeight);
 </script>
 
 <Page pageId="contact">
@@ -16,8 +11,6 @@
                     action="#"
                     method="POST"
                     class="lg:flex-auto"
-                    bind:clientWidth={formWidth}
-                    bind:clientHeight={formHeight}
                 >
                     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div>
@@ -83,7 +76,7 @@
                                     id="message"
                                     name="message"
                                     rows="4"
-                                    class="block min-h-[112px] max-h-[226px] w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-scroll scrollbar scrollbar-thumb-transparent scrollbar-track-transparent scrollbar-corner-transparent"
+                                    class="block resize-none w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent scrollbar-thumb-rounded hover:scrollbar-thumb-gray-400"
                                 />
                             </div>
                         </div>
@@ -96,11 +89,11 @@
                         >
                     </div>
                 </form>
-                <div class="lg:flex-auto rounded-md overflow-hidden">
+                <div class="h-[422px] lg:flex-auto rounded-md overflow-hidden">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52505.55420065067!2d-122.99336475014613!3d49.24597201869356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486772683b65319%3A0x96ec2592de966693!2sMegaHydronics%20Inc!5e0!3m2!1sen!2sca!4v1690264378012!5m2!1sen!2sca"
                         width="100%"
-                        height="{mapHeight}px"
+                        height="100%"
                         style="border:0;"
                         allowfullscreen=""
                         loading="lazy"
