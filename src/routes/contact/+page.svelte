@@ -8,7 +8,7 @@
 </script>
 
 <Page pageId="contact">
-    <div class="px-6 py-14 sm:py-20 lg:px-8">
+    <div class="px-6 py-12 md:py-20 lg:px-8">
         <div class="mx-auto max-w-xl lg:max-w-5xl">
             <h2 class="text-4xl font-bold tracking-tight text-gray-900">Get in touch anytime</h2>
             <div class="mt-12 lg:items-start flex flex-col gap-10 lg:flex-row">
@@ -83,7 +83,7 @@
                                     id="message"
                                     name="message"
                                     rows="4"
-                                    class="block min-h-[112px] w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    class="block min-h-[112px] max-h-[226px] w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-scroll scrollbar scrollbar-thumb-transparent scrollbar-track-transparent scrollbar-corner-transparent"
                                 />
                             </div>
                         </div>

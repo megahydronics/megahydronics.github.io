@@ -28,8 +28,8 @@
   <meta property="og:site_name" content={siteInfo.title} />
 </svelte:head>
 
-<div class="min-h-screen flex flex-col">
-  <nav class="shadow">
+<div class="min-h-screen flex flex-col scrollbar scrollbar-thumb-red-900 scrollbar-track-gray-100">
+  <nav class={menuOpen ? "shadow-md" : ""}>
     <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex">
@@ -122,7 +122,7 @@
               class="flex whitespace-nowrap px-4 py-2 items-center gap-x-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 hover:cursor-pointer"
             >
               <span class="sr-only">{info.title}</span>
-              <svg class="h-5 w-5" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d={info.svgPath} />
               </svg>
               <a class="hover:text-gray-900" href={info.href}>{info.value}</a>
