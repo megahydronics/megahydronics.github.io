@@ -1,27 +1,50 @@
 <script>
     import { projects } from '../lib/state'
+
+    let swaps = projects.map(_ => false)
+
+    function showBefore(index) {
+        return function () {
+            swaps[index] = true
+        }
+    }
+
+    function showAfter(index) {
+        return function () {
+            swaps[index] = false
+        }
+    }
 </script>
 
-<div class="lg:mx-auto min-w-4xl px-4 py-12 md:py-20 sm:px-6 lg:max-w-7xl lg:px-8 space-y-40">
+<div class="lg:mx-auto min-w-4xl px-4 py-12 md:py-20 sm:px-6 lg:max-w-6xl lg:px-8 flex flex-col gap-32">
     {#each projects as project, index}
         <div data-label="projects.{index}">
-            <h2 class="text-base font-semibold leading-7 text-indigo-600">
+            <h2 class="mb-2 text-base font-semibold leading-7 text-indigo-600">
                 {project.service}
             </h2>
-            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <p class="mb-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {project.location}
             </p>
-            <p class="mt-6 leading-8 text-gray-600">
-                {project.description}
-            </p>
-            <div class="space-x-4 mt-10 flex max-w-3xl mx-auto">
-                <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-80">
-                    <img src={project.before} alt="{project.location} before" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
-                </div>
-                <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-80">
-                    <img src={project.after} alt="{project.location} after" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
-                    <!-- <div class="absolute z-20 px-2 py-1 -top-10 bg-white rounded-md bg-opacity-70 text-gray-900 font-semibold">After</div> -->
-                </div>
+            <div class="flex gap-10 flex-col items-center lg:items-start lg:flex-row">
+                <p class="leading-8 text-gray-600">
+                    {project.description}
+                </p>
+                <button on:mouseenter={showBefore(index)} on:mouseleave={showAfter(index)} on:focus={showBefore(index)} on:blur={showAfter(index)} class="cursor-default relative">
+                    <div
+                        class="{swaps[index]
+                            ? 'brightness-75 mb-4 mr-4'
+                            : 'shadow-lg shadow-black/30 z-10 absolute top-0 left-0 translate-x-4 translate-y-4'} transition duration-500 overflow-hidden rounded-md h-60 sm:h-80 aspect-[4/3]">
+                        <img src={project.after} alt="{project.location} after" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                        <div class="{swaps[index] ? 'opacity-0' : ''} transition duration-500 absolute z-20 rounded-tl-md rounded-br-md top-0 left-0 px-3 py-1 bg-black/60 text-gray-100 font-semibold">After</div>
+                    </div>
+                    <div
+                        class="{swaps[index]
+                            ? 'shadow-lg shadow-black/30 z-10 absolute top-0 left-0 translate-x-4 translate-y-4'
+                            : 'brightness-75 mb-4 mr-4'} transition duration-500 overflow-hidden rounded-md h-60 sm:h-80 aspect-[4/3]">
+                        <img src={project.before} alt="{project.location} before" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                        <div class="{swaps[index] ? '' : 'opacity-0'} transition duration-500 absolute z-20 rounded-tl-md rounded-br-md top-0 left-0 px-3 py-1 bg-black/60 text-gray-100 font-semibold">Before</div>
+                    </div>
+                </button>
             </div>
         </div>
     {/each}

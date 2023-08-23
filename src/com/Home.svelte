@@ -4,10 +4,10 @@
 
     let showArrow
     let scrollPosition
+    let contentElement
 
-    function scrollBottom() {
-        window.scrollTo({
-            top: document.body.scrollHeight,
+    function scrollToContent() {
+        contentElement.scrollIntoView({
             behavior: 'smooth'
         })
     }
@@ -16,13 +16,6 @@
 </script>
 
 <svelte:window bind:scrollY={scrollPosition} />
-{#if showArrow}
-    <button
-        on:click={scrollBottom}
-        class="mx-auto left-0 right-0 z-20 fixed bottom-12 w-12 h-12 rounded-full ring-1 hover:text-gray-900 text-gray-600 ring-black ring-opacity-5 shadow-lg bg-white grid place-content-center">
-        <Icon index={5} size={7} />
-    </button>
-{/if}
 <main class="isolate mb-20">
     <div class="relative isolate -z-10">
         <svg class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]" aria-hidden="true">
@@ -42,7 +35,7 @@
                 style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)" />
         </div>
         <div class="overflow-hidden">
-            <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-20">
+            <div class="mx-auto max-w-7xl px-6 pb-24 pt-36 sm:pt-60 lg:px-8 lg:pt-20">
                 <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                     <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                         <h1 data-label="pages.0.heading" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -96,7 +89,15 @@
         </div>
     </div>
 
-    <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
+    {#if showArrow}
+        <button
+            on:click={scrollToContent}
+            class="mx-auto left-0 right-0 z-20 fixed bottom-12 w-12 h-12 rounded-full ring-1 hover:text-gray-900 text-gray-600 ring-black ring-opacity-5 shadow-lg bg-white grid place-content-center">
+            <Icon index={5} size={7} />
+        </button>
+    {/if}
+
+    <div bind:this={contentElement} class="mx-auto pt-8 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <h2 data-label="texts.0.title" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {texts[0].title}

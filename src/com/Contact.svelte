@@ -68,8 +68,8 @@
                         >Send message</button>
                 </div>
             </form>
-            <div class="relative h-[422px] lg:flex-auto rounded-md overflow-hidden shadow-sm ring-1 ring-gray-200">
-                <img class="{showMap ? 'opacity-0' : 'opacity-100'} object-cover h-full absolute inset-0 transition-opacity duration-300" src="map.png" alt="Map: Location of MegaHydronics Inc." />
+            <div class="relative h-[422px] lg:flex-auto rounded-md overflow-hidden shadow-sm ring-1 bg-gray-100 ring-gray-200">
+                <img class="{showMap ? 'opacity-0' : 'opacity-100'} pointer-events-none object-cover h-full absolute inset-0 transition-opacity duration-300" src="map.jpg" alt="Map: Location of MegaHydronics Inc." />
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52505.55420065067!2d-122.99336475014613!3d49.24597201869356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486772683b65319%3A0x96ec2592de966693!2sMegaHydronics%20Inc!5e0!3m2!1sen!2sca!4v1690264378012!5m2!1sen!2sca"
                     width="100%"

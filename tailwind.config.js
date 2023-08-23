@@ -6,12 +6,11 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'sans-serif']
+            },
+            blur: {
+                xs: '1px'
             }
         }
     },
-    plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/aspect-ratio'),
-        require('tailwind-scrollbar')({ nocompatible: true })
-    ]
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio'), require('tailwind-scrollbar')({ nocompatible: true })]
 }
