@@ -1,6 +1,7 @@
 <script>
-    import { pages, stats, pageIndexSetter, actions, tiles, texts } from '../lib/state'
+    import { data } from '../lib/state'
     import Icon from './Icon.svelte'
+    import Tile from './Tile.svelte'
 
     let showArrow
     let scrollPosition
@@ -39,49 +40,32 @@
                 <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                     <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                         <h1 data-label="pages.0.heading" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                            {pages[0].heading}
+                            {data.pages[0].heading}
                         </h1>
                         <p data-label="pages.0.subheading" class="relative mt-8 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                            {pages[0].subheading}
+                            {data.pages[0].subheading}
                         </p>
                         <div class="mt-8 flex items-center gap-x-4">
-                            <div data-label="actions.0">
-                                <button
-                                    on:click={pageIndexSetter(actions[0].page)}
-                                    class="rounded-md whitespace-pre bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                    >{actions[0].title}</button>
-                            </div>
-                            <button data-label="actions.1" on:click={pageIndexSetter(actions[1].page)} class="text-sm whitespace-pre px-2 py-1 font-semibold leading-6 text-gray-900"
-                                >{actions[1].title}</button>
+                            <a
+                                data-label="actions.0"
+                                href={data.pages[data.actions[0].destination].path}
+                                class="rounded-md whitespace-pre bg-indigo-600 transition px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                >{data.actions[0].title}</a>
+                            <a data-label="actions.1" href={data.pages[data.actions[1].destination].path} class="text-sm whitespace-pre px-2 py-1 font-semibold leading-6 text-gray-900">{data.actions[1].title}</a>
                         </div>
                     </div>
 
                     <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                         <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                            <div class="relative" data-label="tiles.0">
-                                <img src={tiles[0].image} alt={tiles[0].description} class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                            </div>
+                            <Tile index={0} />
                         </div>
                         <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                            <div class="relative" data-label="tiles.1">
-                                <img src={tiles[1].image} alt={tiles[1].description} class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                            </div>
-                            <div class="relative" data-label="tiles.2">
-                                <img src={tiles[2].image} alt={tiles[2].description} class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                            </div>
+                            <Tile index={1} />
+                            <Tile index={2} />
                         </div>
                         <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                            <div class="relative" data-label="tiles.3">
-                                <img src={tiles[3].image} alt={tiles[3].description} class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                            </div>
-                            <div class="relative" data-label="tiles.4">
-                                <img src={tiles[4].image} alt={tiles[4].description} class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                            </div>
+                            <Tile index={3} />
+                            <Tile index={4} />
                         </div>
                     </div>
                 </div>
@@ -92,7 +76,7 @@
     {#if showArrow}
         <button
             on:click={scrollToContent}
-            class="mx-auto left-0 right-0 z-20 fixed bottom-12 w-12 h-12 rounded-full ring-1 hover:text-gray-900 text-gray-600 ring-black ring-opacity-5 shadow-lg bg-white grid place-content-center">
+            class="mx-auto left-0 right-0 z-20 fixed bottom-12 w-12 h-12 transition rounded-full ring-1 hover:text-gray-900 text-gray-600 ring-black ring-opacity-5 shadow-lg bg-white grid place-content-center">
             <Icon index={5} size={7} />
         </button>
     {/if}
@@ -100,21 +84,21 @@
     <div bind:this={contentElement} class="mx-auto pt-8 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <h2 data-label="texts.0.title" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                {texts[0].title}
+                {data.texts[0].title}
             </h2>
             <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
                 <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
                     <p data-label="texts.0.first" class="text-xl leading-8 text-gray-600">
-                        {texts[0].first}
+                        {data.texts[0].first}
                     </p>
-                    {#if texts[0].second}
+                    {#if data.texts[0].second}
                         <div class="mt-10 max-w-xl text-base leading-7 text-gray-700">
                             <p data-label="texts.0.second">
-                                {texts[0].second}
+                                {data.texts[0].second}
                             </p>
-                            {#if texts[0].third}
+                            {#if data.texts[0].third}
                                 <p data-label="texts.0.third" class="mt-10">
-                                    {texts[0].third}
+                                    {data.texts[0].third}
                                 </p>
                             {/if}
                         </div>
@@ -122,7 +106,7 @@
                 </div>
                 <div class="lg:flex lg:flex-auto lg:justify-center">
                     <dl class="w-64 space-y-8 xl:w-80">
-                        {#each stats as stat, index}
+                        {#each data.stats as stat, index}
                             <div data-label="stats.{index}" class="flex flex-col gap-y-2">
                                 <dd class="text-5xl font-semibold tracking-tight text-gray-900">
                                     {stat.value}
