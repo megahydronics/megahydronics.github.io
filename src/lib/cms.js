@@ -5,7 +5,7 @@ const pb = new Pocketbase(address)
 
 export async function loadData() {
     return {
-        actions: await recordsByIndex('actions', 'page'),
+        actions: await recordsByIndex('actions', 'destination'),
         contacts: await recordsByIndex('contacts', 'icon'),
         emblems: await recordsByIndex('emblems'),
         icons: await recordsByIndex('icons'),
