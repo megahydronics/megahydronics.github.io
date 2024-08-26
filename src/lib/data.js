@@ -3,7 +3,9 @@ const data = {
         title: 'MegaHydronics Inc.',
         url: 'https://megahydronics.com',
         description: 'Top tier service to our residential, commercial, and industrial clients to address their heating, plumbing, HVAC, gas, and facility maintenance needs.',
-        copyright: '© 2024 MegaHydronics Inc. All rights reserved.'
+        copyright: '© 2024 MegaHydronics Inc. All rights reserved.',
+		logo: '/images/logo.png',
+		map: '/images/map.jpg'
     },
     emblems: [
         { logo: '/images/emblems-0-logo.png', name: 'Navien Tankless Innovations' },

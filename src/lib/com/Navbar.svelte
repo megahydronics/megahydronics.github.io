@@ -19,7 +19,7 @@
         <div class="flex h-16 justify-between">
             <div class="flex">
                 <button on:click={toggleLabels} class="flex flex-shrink-0 items-center">
-                    <img class="h-8 w-auto" src="images/logo.png" alt="MegaHydronics logo" />
+                    <img class="h-8 w-auto" src={data.site.logo} alt="MegaHydronics logo" />
                 </button>
                 <div class="hidden md:ml-10 md:flex md:space-x-5 md:items-center">
                     {#each data.pages as page_, index}
