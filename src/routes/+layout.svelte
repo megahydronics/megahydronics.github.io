@@ -1,7 +1,7 @@
 <script>
     import '../app.css'
-    import Page from '../com/Page.svelte'
-    import { showLabels, updateLabels } from '../lib/state'
+    import Page from '$lib/com/Page.svelte'
+    import { showLabels, updateLabels } from '$lib/state'
     import { onMount } from 'svelte'
     import { page } from '$app/stores'
 

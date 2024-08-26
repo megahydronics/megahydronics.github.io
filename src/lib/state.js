@@ -1,16 +1,6 @@
 import { writable } from 'svelte/store'
+export { default as data } from './data';
 
-import { loadData } from './cms'
-export const data = await loadData()
-// import { default_ } from './data'
-// export const data = default_
-
-export const site = {
-    title: 'MegaHydronics Inc.',
-    url: 'https://megahydronics.com',
-    description: 'Top tier service to our residential, commercial, and industrial clients to address their heating, plumbing, HVAC, gas, and facility maintenance needs.',
-    copyright: '© 2023 MegaHydronics Inc. All rights reserved.'
-}
 
 export const showLabels = writable()
 export function updateLabels() {
